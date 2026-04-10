@@ -4,6 +4,9 @@ clear
 # 使用专属优化
 #sed -i 's,-mcpu=generic,-march=armv8-a,g' include/target.mk
 
+# 更改默认管理地址为 192.168.1.2
+sed -i 's/192.168.1.1/192.168.1.2/g' package/base-files/files/bin/config_generate
+
 # 交换 LAN/WAN 口
 sed -i 's,"eth1" "eth0","eth0" "eth1",g' target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 sed -i "s,'eth1' 'eth0','eth0' 'eth1',g" target/linux/rockchip/armv8/base-files/etc/board.d/02_network
